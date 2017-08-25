@@ -1,2 +1,3 @@
-*.h linguist-language=Javascript
-*.m linguist-language=Javascript
+*.js linguist-language=Es6
+*.css linguist-language=Es6
+*.html linguist-language=Es6
