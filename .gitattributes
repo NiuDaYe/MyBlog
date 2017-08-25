@@ -1,3 +1,3 @@
-*.js linguist-language=ES6
-*.css linguist-language=ES6
-*.html linguist-language=ES6
+*.js linguist-language=ecmascript 6
+*.css linguist-language=ecmascript 6
+*.html linguist-language=ecmascript 6
