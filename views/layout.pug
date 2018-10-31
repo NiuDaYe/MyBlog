@@ -1,0 +1,44 @@
+doctype html
+html(lang="en")
+    title 这是layout的title
+    link(rel="stylesheet", href="/components/bootstrap/dist/css/bootstrap.css")
+    link(rel="stylesheet", href="/css/style.css")
+    head
+    body
+    nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.mb-2
+      .container
+        a.navbar-brand(href='/') 🐂的博客
+        button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarsExample05', aria-controls='navbarsExample05', aria-expanded='false', aria-label='Toggle navigation')
+          span.navbar-toggler-icon
+        #navbarsExample05.collapse.navbar-collapse
+          ul.navbar-nav.mr-auto
+            li.nav-item.active
+              a.nav-link(href='/') 首页
+                span.sr-only (current)
+            if user
+                li.nav-item
+                  a.nav-link(href='/articles/new') 新建文章
+          ul.navbar-nav.mr-right
+            if user 
+                li.nav-item
+                  a.nav-link(href='/users/logout')  退出
+            else 
+                li.nav-item
+                  a.nav-link(href='/users/register')  注册
+                li.nav-item
+                  a.nav-link(href='/users/login') 登录
+
+    .container
+        != messages('message', locals)
+        if errors
+            each error, i in errors
+              div(class="alert alert-danger") #{error.msg}
+
+        block content
+        br
+        hr
+        footer
+            p Copyright &copy; 2018
+    script(src="/components/jquery/dist/jquery.min.js")
+    script(src="/components/bootstrap/dist/js/bootstrap.js")
+    script(src="/js/main.js")

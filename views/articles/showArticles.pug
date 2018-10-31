@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+    h1 #{title}
+    h1 #{article.title}
+    h5 作者是 #{author}
+    p 文章内容是 #{article.body}
+    hr
+    if user && user.id == article.author
+        a.btn.btn-primary.mr-2(href="/articles/" + article.id + "/edit") 编辑当前文章
+        a.btn.btn-danger.delete-article(href="#",data-id=article.id) 删除当前文章
